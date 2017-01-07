@@ -1,0 +1,103 @@
+/*任务说明书开始*/
+.other-left{
+	width: 14%;
+	min-height: 430px;
+	_height:400px;
+	background: yellow;
+	float: left;
+	background: #fafafa;
+
+
+
+}
+.other-left h2{
+	 color: #2196F3;
+	width: 100%;
+	font-size: 18px;
+	line-height: 40px;
+	text-indent: 15%;
+	background: #eee;
+
+}
+.other-left li{
+	margin: 0 10%;
+	text-indent: 8%;
+	font-size: 16px;
+	line-height: 50px;
+	border-bottom: 1px solid #eee;
+
+}
+.other-left li a{
+	color: #666;
+}
+
+.other-left li .color-blue{
+	color: #2196F3;
+}
+.other-left li a:hover{
+	color: #2196F3;
+}
+.other-right{
+	width: 78%;
+	min-height: 430px;
+	_height:400px;
+	float: right;
+	margin-right: 4%;
+}
+
+.video{
+	width: 100%;
+}
+/*任务说明书结束*/
+
+
+/*每个任务的公共样式*/
+.task-each-top{
+	margin-bottom: 40px;
+}
+.task-video{
+	width: 60%;
+	margin-left: 8%;
+	float: left;
+}
+
+.task-view{
+	width: 25%;
+	float: right;
+}
+
+.everyday{
+	margin-bottom: 10px;
+	border-bottom: 1px solid #666;
+}
+.task-day{
+	width: 70%;
+	float: left;
+}
+.task-schedule{
+	width: 25%;
+	float: right;
+	background: red;
+	height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

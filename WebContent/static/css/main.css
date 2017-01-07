@@ -1,0 +1,256 @@
+/*------------------home首页-----------------------*/
+
+.home-main{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+/*轮播图结构布局*/
+.banner-con {
+    position: relative;
+    margin-bottom: 70px;
+    width: 100%;
+}
+
+.carousel-pic{
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: auto;
+}
+
+.carousel-inner {
+    width: 500%;
+    position: relative;
+    left: 0%;
+
+}
+
+.item {
+    width: 20%;
+    float:left; 
+    position: relative;
+
+}
+
+.inner-pic {
+    width: 100%;
+
+
+}
+/*图片上文本样式*/
+.inner-text {
+    position: absolute;
+    left: 100px;
+    top: 0px;
+    bottom: 0px;
+    height: 200px;
+    margin: auto;
+}
+
+.inner-text h4 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.inner-text p {
+    margin: 0 0 5px;
+    font-size: 20px;
+    line-height: 1.1;
+}
+.inner-btn {
+    padding: 6px 30px;
+    border: 1px solid #0078a5;
+    border-radius: 2px;
+    margin-top: 50px;
+    display: inline-block;
+    color: inherit;
+}
+.cover-1 {  color: #165c5f;}
+.cover-2 {  color: #fff;}
+.cover-3 {  color: #0078a5;}
+.cover-4 {  color: #804500;}
+.cover-5 {  color: #fff;}
+
+/*两边的导航部分*/
+
+.carousel-btn {
+    position: absolute;
+    width: 20px;
+    height: 66px;
+    top: 50%;
+    margin-top: -33px;
+    text-align: center;
+}
+
+.carousel-btn-left {
+    left: 0px;
+    background: url(../images/bg11.png) no-repeat;
+}
+
+.carousel-btn-right {
+    right: 0px;
+    background: url(../images/bg12.png) no-repeat;
+}
+
+
+/*轮播图底上导航按钮*/
+
+.carousel-indicators {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 20px;
+    margin: auto;
+    width: 120px;
+}
+.carousel-indicators li {
+    display: block;
+    float: left;
+    margin-left: 12px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #f5f5f5;
+}
+.focuse {
+    background: #fff;
+}
+
+
+/*中间部分三个分栏*/
+
+.column-list {
+    width: 20%;
+    float: left;
+    margin: 0 8%;
+    text-align: center;
+}
+
+.column-list1{
+	margin-left: 4%;
+}
+.column-list3{
+	margin-right: 4%;
+}
+.column-img {
+    width: 50%;
+    height: 200px;
+    margin-left: 25%;
+    height: auto;
+    overflow: hidden;
+}
+
+.column-list span {
+    font-size: 18px;
+    display: block;
+    margin: 20px 0;
+      color: #2196F3;
+
+}
+
+.column-list p {
+    line-height: 30px;
+    font-size: 16px;
+    color: #666;
+}
+
+/*-------------home结束---------------*/
+
+/*-------------course开始-------------*/
+
+.course-title{
+	color:#2196F3;
+}
+.course-h3{
+	color:#666;
+	font-weight: 100px;
+	margin-top:20px; 
+	line-height: 30px;
+	border-bottom:1px solid #2196F3;
+    font-size: 16px;
+}
+
+.course-a{
+   color:#333;
+}
+.phase{
+	
+	height:270px;
+	margin: 0 auto;
+
+}
+
+.task-all{
+	margin: 30px auto;
+}
+.task-ul{
+	margin: 0 auto;
+	width: 900px;
+    margin-bottom: 20px;
+}
+.task-p {
+    line-height: 30px;
+    text-indent: 8px;
+   font-family: "楷体";
+    color: #000;
+    border-radius: 6px;
+    margin: 20px  0px 20px 0;
+    font-size: 18px;
+}
+.task-all ul li{
+	width: 160px;
+	height:200px;
+	border:1px solid #2196F3;
+	float: left;
+	margin: 0 9px;
+    border-radius: 6px;
+}
+
+.task-all ul li h4{
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+	background: #2196F3;
+	height: 26px;
+	color: #fff;
+	opacity: 0.8;
+	line-height: 26px;
+	text-indent: 4px;
+}
+.task-all ul li p{
+	text-align: center;
+	line-height: 36px;
+	color: #333;
+}
+.task-all .li-text{
+	text-align: center;
+	margin-top :30px;
+}
+/*-------------course结束-------------*/
+
+/*-------------group开始-------------*/
+.group-main{
+   
+}
+
+.group-left{
+    width: 70%;
+    min-height: 400px;
+    background: #fafafa;
+    float: left;
+
+
+}
+.group-right{
+    width: 25%;
+    min-height: 400px;
+   background: #fafafa;
+    float: right;
+}
+
+
+
+/*-------------group结束-------------*/

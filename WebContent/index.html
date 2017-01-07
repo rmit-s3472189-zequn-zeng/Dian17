@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>17点 , 是起点</title>
+    <link rel="stylesheet" type="text/css" href="static/css/public.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="SHORTCUT ICON" href="static/images/logo1.ico">
+    <script src="static/js/move.js"></script>  
+    <script type="text/javascript" src="static/js/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <!-- 导航的部分 -->
+    <div class="nav">
+        <div class="container">
+           <a href="index.html"><h1><img src="static/images/logo123.png" width="36" height="36"><span>17点</span></h1></a> 
+            <ul>
+                <li><a href="" class="color-blue">首页</a></li>
+                <li><a href="html/course.html">课程</a></li>
+                <li><a href="html/course.html">小组</a></li>
+                <li><a href="html/answer.html">问答</a></li>
+                <li><a href="html/community.html">社区</a></li>
+            </ul>
+            <div class="nav-right">
+              <a href="view/loginpage.jsp" id="login">登录</a>
+              <span>|</span>
+              <a href="view/registerpage.jsp" id="register">注册</a>
+            </div>
+        </div>
+    </div>
+    <!-- 导航的部分结束 -->
+    <!-- 中间部分 -->
+    <!-- 上半部分轮播图 -->
+    <div class="home-main container">
+        <div class="banner-con">
+            <div class="carousel-pic clearfloat" id="carousel-pic" >
+                <div class="carousel-inner" id="carousel-inner">
+                    <div class="item cover-1">
+                        <img class="inner-pic" src="static/images/banner-1.jpg">
+                        <div class="inner-text">
+                            <h4>17点，一起点</h4>
+                            <div>
+                                <p>一家专门做自学前端的网站。</p>
+                            </div>
+                            <a href="###" class="inner-btn">开始学习</a>
+                        </div>
+                    </div>
+                     <div class="item cover-4">
+                        <img class="inner-pic" src="static/images/banner-4.png">
+                        <div class="inner-text">
+                            <h4>17点，17岁</h4>
+                            <div>
+                                <p>回归纯真年代，追寻纯真技术。</p>
+                            </div>
+                            <a href="###" class="inner-btn">开始学习</a>
+                        </div>
+                    </div>
+                    <div class="item cover-3">
+                        <img class="inner-pic" src="static/images/banner-5.png">
+                        <div class="inner-text">
+                            <h4>17点，是起点</h4>
+                            <div>
+                                <p>带你从这里走进前端世界的大门。</p>
+                            </div>
+                            <a href="###" class="inner-btn">开始学习</a>
+                        </div>
+                    </div>
+                   
+                    <div class="item cover-2">
+                        <img class="inner-pic" src="static/images/banner-2.png">
+                        <div class="inner-text">
+                            <h4>17点，放学点</h4>
+                            <div>
+                                <p>业余时间不孤单，</p>
+                                <p>小伙伴带你一起去闯关。</p>
+                            </div>
+                            <a href="###" class="inner-btn">开始学习</a>
+                        </div>
+                    </div>
+                    <div class="item cover-5">
+                        <img class="inner-pic" src="static/images/banner-3.png">
+                        <div class="inner-text">
+                            <h4>学技术，不学套路</h4>
+                            <div>
+                                <p>开源是一种文化，互助是一种精神</p>
+                                <p>为技术回归纯真的极客精神</p>
+                            </div>
+                            <a href="###" class="inner-btn">开始学习</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="carousel-btn-left carousel-btn"></a>
+            <a href="" class="carousel-btn-right carousel-btn"></a>
+            <ol class="carousel-indicators " id="carousel-indicators">
+                <li class="focuse"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            <div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            window.onload = function  () {
+
+                    var  oCarouselinner = document.getElementById("carousel-inner");
+                    var timer = 0;
+                    var iLeft = 0;
+                    var oLi = document.getElementById("carousel-indicators").getElementsByTagName("li")
+                    autotab();
+                    var iNum = 0;
+                    function autotab(){
+                        timer = setInterval(function(){  
+                        
+
+                         iLeft =iLeft-100;
+                         iNum=(-iLeft)/100; 
+                            if (iLeft==-500) { 
+                                iLeft=0;
+                                oCarouselinner.style.left=iLeft+"%"; 
+                                console.log(iLeft);
+                                iNum=0;
+                            }else {
+                                
+                                oCarouselinner.style.left= iLeft+"%";
+                                console.log(iLeft);                      
+                            }                    
+                       for(var i=0;i<oLi.length;i++){
+                          oLi[i].style.background = "transparent";
+                       } 
+                       oLi[iNum].style.background = "#fff";    
+
+                        },2000)
+                    }
+               
+            }
+            
+
+        </script>
+        <!-- 轮播图部分结束 -->
+        <!-- 功能部分 -->
+        <ul class="column-ul">
+            <li class="column-list column-list1">
+                <a href="">
+                    <div class="column-img"><img class="inner-pic" src="static/images/inner1.png"></div>
+                    <span>17小组</span>
+                </a>
+                <p>学习路上，你不孤单</p>
+                <p>小组长"骚扰"你，关怀你</p>
+                <p>就是要让你一起坚持</p>
+            </li>
+            <li class="column-list">
+                <a href="">
+                    <div class="column-img"><img class="inner-pic" src="static/images/inner3.png"></div>
+                    <span>17问答</span>
+                </a>
+                <p>学习路上，你不孤单</p>
+                <p>小组长"骚扰"你，关怀你</p>
+                <p>就是要让你一起坚持</p>
+            </li>
+            <li class="column-list column-list3">
+                <a href="">
+                    <div class="column-img"><img class="inner-pic" src="static/images/inner1.png"></div>
+                    <span>17社区</span>
+                </a>
+                <p>学习路上，你不孤单</p>
+                <p>小组长"骚扰"你，关怀你</p>
+                <p>就是要让你一起坚持</p>
+            </li>
+        </ul>
+    </div>
+    <!-- 功能部分结束 -->
+    <!-- 底部部分 -->
+    <div class="footer ">
+        <div class="container">
+            <dl class="foot-dl1">
+                <dt>如何使用</dt>
+                <dd>帮助</dd>
+                <dd>课程</dd>
+                <dd>小组</dd>
+                <dd>问答</dd>
+            </dl>
+            <dl>
+                <dt>关于我们</dt>
+                <dd>关注我们</dd>
+                <dd>加入我们</dd>
+                <dd>关于我们</dd>
+                <dd>友情链接</dd>
+            </dl>
+            <dl>
+                <dt>开发者</dt>
+                <dd>Will</dd>
+            </dl>
+            <dl class="foot-dl3">
+                <dt> 17点同学群</dt>
+                <dd>QQ群：843408</dd>
+                <dd>QQ群：843408</dd>
+                <dd>QQ群：843408</dd>
+            </dl>
+        </div>
+    </div>
+    <!-- 底部部分结束 -->
+
+  <!-- 豆瓣东西登录注册-->
+    <div class="login-min-mask" style="display: none;"></div>
+    <div class="login-min" style="display: none;">
+        <div class="login-min-content">
+            <a href="index.html" title="关闭" class="login-min-close" style="color: #000; font-size: 14px;">×</a>
+            <iframe scrolling="no" width="478" height="382" frameborder="0" src="view/loginpage.jsp" style="display: none;" id="iframe1"></iframe>
+            <iframe scrolling="no" width="478" height="462" frameborder="0" src="view/login2.html" style="display: none;" id="iframe2"></iframe>
+        </div>
+    </div>
+    
+</body>
+</html>
