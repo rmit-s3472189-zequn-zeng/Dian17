@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.sql.Connection;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 import javax.xml.ws.Response;
 
+import com.model.JDBCUtils;
 import com.sun.corba.se.spi.activation.Repository;
 
 /**
@@ -32,6 +35,8 @@ public class LoginServlet extends HttpServlet {
 		 * Add database connection
 		 * 
 		 * */
+		Connection con = null;
+		con=JDBCUtils.getConnection();
 		
 		HttpSession session=request.getSession();
 		System.out.println(session.getAttribute("username"));

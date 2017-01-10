@@ -18,7 +18,9 @@ public class JDBCUtils {
             con = DriverManager.getConnection(url, user, password);  
             System.out.println("success");  
         } catch (Exception e) {  
+        	System.out.println("Failed");
             e.printStackTrace();  
+            
         }  
           
         return con ;  
