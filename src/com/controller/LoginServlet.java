@@ -12,7 +12,10 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 import javax.xml.ws.Response;
 
+import com.model.CreatePersonDao;
 import com.model.JDBCUtils;
+import com.model.Person;
+import com.model.User;
 import com.sun.corba.se.spi.activation.Repository;
 
 /**
@@ -35,8 +38,9 @@ public class LoginServlet extends HttpServlet {
 		 * Add database connection
 		 * 
 		 * */
-		Connection con = null;
-		con=JDBCUtils.getConnection();
+		CreatePersonDao createPersonDao=new CreatePersonDao();
+		Person person = new User(username,password,"user");
+		createPersonDao.addPerson(person);
 		
 		HttpSession session=request.getSession();
 		System.out.println(session.getAttribute("username"));

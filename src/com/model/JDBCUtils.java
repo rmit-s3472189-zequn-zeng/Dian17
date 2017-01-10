@@ -18,8 +18,7 @@ public class JDBCUtils {
             con= DriverManager.getConnection(url);
             System.out.println("success");  
         } catch (Exception e) {  
-        	System.out.println("Connect to database Failed");
-            e.printStackTrace();         
+        	System.out.println("Connect to database Failed"+e.getMessage().toString());
         }           
         return con ;  		
 	}
