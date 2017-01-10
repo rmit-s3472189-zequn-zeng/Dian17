@@ -9,22 +9,19 @@ public class JDBCUtils {
 	public static Connection getConnection(){
 		String driverName = "com.mysql.jdbc.Driver";  
 		  
-        String url = "jdbc:mysql://101.200.127.60:3306/Dian17";  
-        String user = "zequnzeng";
-        String password = "21119188";  
+       // String url = "jdbc:mysql://101.200.127.60:3306/Dian17";  
+        String url = "jdbc:mysql://101.200.127.60:3306/Dian17?"
+                + "user=zequnzeng&password=21119188&useUnicode=true&characterEncoding=UTF8";
         Connection con = null ;  
         try {        
             Class.forName(driverName);  
-            con = DriverManager.getConnection(url, user, password);  
+            con= DriverManager.getConnection(url);
             System.out.println("success");  
         } catch (Exception e) {  
-        	System.out.println("Failed");
-            e.printStackTrace();  
-            
-        }  
-          
-        return con ;  
-		
+        	System.out.println("Connect to database Failed");
+            e.printStackTrace();         
+        }           
+        return con ;  		
 	}
 	
 	public static void free(ResultSet rs, Statement sta , Connection con){
