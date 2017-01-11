@@ -9,7 +9,9 @@ public interface PersonDao {
       
     public int updatePerson(String name);  
       
-    public Person findStudent(String name);  
+    public Person findPerson(String name);  
       
     public Set<Person> findAll(); 
+    
+    public boolean isExistedPerson(Person person);
 }

@@ -46,7 +46,7 @@
 					}
 					else {						
 						%>
-						<a href="<%=request.getContextPath()%>/view/loginpage.jsp"
+						<a href="<%=request.getContextPath()%>/view/loginPage.jsp"
 					id="login">Login></a>
 						<% 
 					}

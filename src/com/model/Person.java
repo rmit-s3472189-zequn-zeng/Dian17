@@ -1,5 +1,6 @@
 package com.model;
 
+
 public abstract class Person {
 	// ID :=Phone
 	private String userID;
@@ -12,7 +13,6 @@ public abstract class Person {
 		this.type=t;
 	}
 	public abstract String  getPersonType();
-	
 	
 	/**
 	 * @return the userID
@@ -30,6 +30,7 @@ public abstract class Person {
 	 * @return the password
 	 */
 	public String getPassword() {
+		
 		return password;
 	}
 	/**

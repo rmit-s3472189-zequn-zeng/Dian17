@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 import javax.xml.ws.Response;
 
-import com.model.CreatePersonDao;
+import com.model.PersonDaoImplement;
 import com.model.JDBCUtils;
 import com.model.Person;
 import com.model.User;
@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 		 * Add database connection
 		 * 
 		 * */
-		CreatePersonDao createPersonDao=new CreatePersonDao();
+		PersonDaoImplement createPersonDao=new PersonDaoImplement();
 		Person person = new User(username,password,"user");
 		createPersonDao.addPerson(person);
 		
