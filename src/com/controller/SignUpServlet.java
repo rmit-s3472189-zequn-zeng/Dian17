@@ -14,7 +14,7 @@ import com.model.User;
 /**
  * Servlet implementation class SignUpServlet
  */
-@WebServlet("/SignUpServlet")
+@WebServlet("/view/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -32,6 +32,7 @@ public class SignUpServlet extends HttpServlet {
 		}
 		else{
 			System.out.println("Sign up successfully");
+			//Then add new person into data base
 		}
 	}
 
