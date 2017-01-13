@@ -9,9 +9,9 @@ public interface PersonDao {
       
     public int updatePerson(Person person);  
       
-    public Person findPerson(Person person);  
+    public boolean findPerson(Person person);  
       
     public Set<Person> findAll(); 
     
-    public boolean isExistedPerson(Person person);
+    public boolean isValidPerson(Person person);
 }

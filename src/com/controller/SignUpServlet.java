@@ -29,15 +29,17 @@ public class SignUpServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		Person newPerson = new User(username,password,"user");
 		PersonDaoImplement personDao=new PersonDaoImplement();
-		if (personDao.isExistedPerson(newPerson)){
+		if (personDao.findPerson(newPerson)){
 			request.setAttribute("result", "Sorry! Username is existed in system!");
 			request.setAttribute("username", username);
 			System.out.println(username);
 			request.getRequestDispatcher("/view/signuppage.jsp").forward(request, response);
 		}
 		else{
-			System.out.println("Sign up successfully");
-			//Then add new person into data base
+			// add into database
+			PersonDaoImplement createPersonDao=new PersonDaoImplement();
+			Person person = new User(username,password,"user");
+			createPersonDao.addPerson(person);
 		}
 	}
 

@@ -33,22 +33,21 @@ public class LoginServlet extends HttpServlet {
 		
 		String username = request.getParameter("username");
 		String password=request.getParameter("password");
-		System.out.println("username: "+username +"Password: "+password);
-		/*
-		 * Add database connection
-		 * 
-		 * */
-		PersonDaoImplement createPersonDao=new PersonDaoImplement();
-		Person person = new User(username,password,"user");
-		createPersonDao.addPerson(person);
-		
 		HttpSession session=request.getSession();
-		System.out.println(session.getAttribute("username"));
-		if (session.getAttribute("username")==null){			
-			session.setAttribute("username", username);
-			session.setMaxInactiveInterval(30);
-			request.setAttribute("sessionid", session.getId());			
-			request.getRequestDispatcher("/view/user.jsp").forward(request, response);			
+		PersonDaoImplement personDaoImplement = new PersonDaoImplement();
+		Person person = new User(username,password,"user");
+		
+		if (session.getAttribute("username")==null){
+			if (personDaoImplement.isValidPerson(person)){
+				session.setAttribute("username", username);
+				session.setMaxInactiveInterval(30);
+				request.setAttribute("sessionid", session.getId());			
+				request.getRequestDispatcher("/view/user.jsp").forward(request, response);
+			}
+			else {
+				System.out.println(" Login failed");
+			}
+					
 		}
 		else {
 			response.sendRedirect(request.getContextPath()+"/index.html");
