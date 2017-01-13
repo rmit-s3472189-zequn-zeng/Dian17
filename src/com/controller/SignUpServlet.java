@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,12 +25,15 @@ public class SignUpServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//user name ==> phone number
-		String username= request.getParameter("username");
+		String username= request.getParameter("newUsername");
 		String password = request.getParameter("password");
 		Person newPerson = new User(username,password,"user");
 		PersonDaoImplement personDao=new PersonDaoImplement();
 		if (personDao.isExistedPerson(newPerson)){
-			System.out.println("Sign up failed");
+			request.setAttribute("result", "Sorry! Username is existed in system!");
+			request.setAttribute("username", username);
+			System.out.println(username);
+			request.getRequestDispatcher("/view/signuppage.jsp").forward(request, response);
 		}
 		else{
 			System.out.println("Sign up successfully");

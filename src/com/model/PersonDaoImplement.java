@@ -29,17 +29,18 @@ public class PersonDaoImplement implements PersonDao{
 	}
 
 	@Override
-	public int deletePerson(String name) {
+	public int deletePerson(Person person) {
 		return 0;
 	}
 
 	@Override
-	public int updatePerson(String name) {
+	public int updatePerson(Person person) {
+		
 		return 0;
 	}
 
 	@Override
-	public Person findPerson(String name) {
+	public Person findPerson(Person person) {
 		return null;
 	}
 

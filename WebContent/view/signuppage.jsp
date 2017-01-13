@@ -10,10 +10,18 @@
 <body>
 	<div id="content">
         <form  action ="SignUpServlet" id="popup_login_form" name="popup_login_form" method="post" autocomplete="off">
-            <h2>欢迎来到17点, 请登录</h2>
+            <h2>欢迎来到17点, 请注册</h2>
             <fieldset>
                 <div class="field">
-                    <input type="text" name="newUsername" class="input-text" placeholder="手机号">
+                <%
+                	if (request.getAttribute("username")==null){
+                	%>
+                		<input type="text" name="newUsername" class="input-text" placeholder="手机号">
+                	<%
+                }else{%>
+                <input type="text" name="newUsername" class="input-text" placeholder=<%=request.getAttribute("username") %>>
+               <%}%>
+                    
                 </div>
                 <div class="field">
                     <input class="login_pwd" type="password" name="password" placeholder="密码">
@@ -28,6 +36,13 @@
                 </div>
             </fieldset>
         </form>
+        <%
+        	if (request.getAttribute("result")!=null){%>
+        		<label><%=request.getAttribute("result") %></label>
+        	<%}
+        %>
+        
+        
     </div>
 </body>
 </html>

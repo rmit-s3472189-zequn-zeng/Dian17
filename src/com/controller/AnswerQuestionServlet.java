@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class UserDetailModifyServlet
- * 
+ * Servlet implementation class AnswerQuestionServlet
  */
-@WebServlet("/view/UserDetailModifyServlet")
-public class UserDetailModifyServlet extends HttpServlet {
+@WebServlet("/view/AnswerQuestionServlet")
+public class AnswerQuestionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+		String question= request.getParameter("question");
+		System.out.println("Uploaded Question: "+question);
+		System.out.println("Success entry");
 	}
 
 }
