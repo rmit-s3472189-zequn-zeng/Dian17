@@ -41,4 +41,8 @@ public class User extends Person {
 		return false;
 	}
 	
+	public void createGroupByName(String groupname){
+		
+	}
+	
 }
