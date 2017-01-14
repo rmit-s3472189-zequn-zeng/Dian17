@@ -9,4 +9,5 @@ public interface GroupDao {
 	public List<Person> listAllGroupMember();
 	public boolean isGroupAdmin(Person person);
 	public boolean setAdminByGroupMember(Person person);
+	public boolean isExistedGroupName(Group group);
 }

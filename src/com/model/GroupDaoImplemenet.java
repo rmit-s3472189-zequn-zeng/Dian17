@@ -34,4 +34,9 @@ public class GroupDaoImplemenet implements GroupDao {
 		return false;
 	}
 
+	@Override
+	public boolean isExistedGroupName(Group group) {
+		return false;
+	}
+
 }

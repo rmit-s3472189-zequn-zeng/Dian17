@@ -42,7 +42,8 @@ public class User extends Person {
 	}
 	
 	public void createGroupByName(String groupname){
-		
+		//1.check group name wheather existed in database
+		//2. add group into a person
 	}
 	
 }
