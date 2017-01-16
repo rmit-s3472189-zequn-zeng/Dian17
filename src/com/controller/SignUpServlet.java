@@ -26,9 +26,8 @@ public class SignUpServlet extends HttpServlet {
 		//user name ==> phone number
 		String username= request.getParameter("newUsername");
 		String password = request.getParameter("password");
-		Person newPerson = new User(username,password,"user");
-		PersonDaoImplement personDao=new PersonDaoImplement();
-		if (personDao.findPerson(newPerson)){
+		User newPerson = new User(username,password,"user");
+		if (newPerson.isUser()){
 			request.setAttribute("result", "Sorry! Username is existed in system!");
 			request.setAttribute("username", username);
 			System.out.println(username);
@@ -36,14 +35,17 @@ public class SignUpServlet extends HttpServlet {
 		}
 		else{
 			// add into database
-			PersonDaoImplement createPersonDao=new PersonDaoImplement();
-			Person person = new User(username,password,"user");
-			createPersonDao.addPerson(person);
-			HttpSession session=request.getSession();
-			session.setAttribute("username", username);
-			session.setMaxInactiveInterval(30);
-			request.setAttribute("sessionid", session.getId());	
-			request.getRequestDispatcher("/view/user.jsp").forward(request, response);
+			User person = new User(username,password,"user");
+			if (person.registNewUser()){
+				HttpSession session=request.getSession();
+				session.setAttribute("username", username);
+				session.setMaxInactiveInterval(30);
+				request.setAttribute("sessionid", session.getId());	
+				request.getRequestDispatcher("/view/user.jsp").forward(request, response);
+			}
+			else{
+				System.out.println("Added failed");
+			}
 		}
 	}
 

@@ -28,7 +28,6 @@ public class GroupConstructionServlet extends HttpServlet {
 		System.out.println(username);
 		String groupname= request.getParameter("newgroupname");
 		System.out.println(groupname);
-		
 	}
 
 }

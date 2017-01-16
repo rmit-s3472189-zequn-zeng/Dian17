@@ -12,8 +12,6 @@ public abstract class Person {
 		this.password=pwd;
 		this.type=t;
 	}
-	public abstract String  getPersonType();
-	
 	/**
 	 * @return the userID
 	 */

@@ -11,7 +11,7 @@ import java.util.Set;
 public class PersonDaoImplement implements PersonDao{
 
 	@Override
-	public int addPerson(Person person) {
+	public boolean addPerson(Person person) {
 		Connection connection=null;
 		connection= JDBCUtils.getConnection();
 		String sql1 ="insert into Person(userName,password,type) values('"+person.getUserID()+"',md5('"+person.getPassword()+"'),'"+"user"+"');";
@@ -20,24 +20,23 @@ public class PersonDaoImplement implements PersonDao{
 			statement= connection.createStatement();
 			statement.executeUpdate(sql1);
 			System.out.println("Success insert");
-			
+			return true;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			return false;
 		}finally {
 			JDBCUtils.free(null, statement, connection);
 		}
-		return 1;
 	}
 
 	@Override
-	public int deletePerson(Person person) {
-		return 0;
+	public boolean deletePerson(Person person) {
+		return false;
 	}
 
 	@Override
-	public int updatePerson(Person person) {
+	public boolean updatePerson(Person person) {
 		
-		return 0;
+		return false;
 	}
 
 	@Override
@@ -77,7 +76,6 @@ public class PersonDaoImplement implements PersonDao{
 		try {
 			pstmt = (PreparedStatement)connection.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
-			
 			while(rs.next()){
 				System.out.println("Distinguish Success!");
 				if(rs.getString(2).equals(person.getUserID())){

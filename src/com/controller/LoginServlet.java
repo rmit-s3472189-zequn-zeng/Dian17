@@ -34,11 +34,9 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password=request.getParameter("password");
 		HttpSession session=request.getSession();
-		PersonDaoImplement personDaoImplement = new PersonDaoImplement();
-		Person person = new User(username,password,"user");
-		
+		User person = new User(username,password,"user");
 		if (session.getAttribute("username")==null){
-			if (personDaoImplement.isValidPerson(person)){
+			if (person.verifyPassword()){
 				session.setAttribute("username", username);
 				session.setMaxInactiveInterval(30);
 				request.setAttribute("sessionid", session.getId());			
