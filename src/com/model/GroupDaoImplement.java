@@ -2,7 +2,7 @@ package com.model;
 
 import java.util.List;
 
-public class GroupDaoImplemenet implements GroupDao {
+public class GroupDaoImplement implements GroupDao {
 
 	@Override
 	public boolean CreateGroupByName(Person person) {

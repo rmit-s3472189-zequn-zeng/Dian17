@@ -12,6 +12,12 @@ public abstract class Person {
 		this.password=pwd;
 		this.type=t;
 	}
+	
+	public Person(String username,String type){
+		this.userID=username;
+		this.type=type;
+	}
+	
 	/**
 	 * @return the userID
 	 */

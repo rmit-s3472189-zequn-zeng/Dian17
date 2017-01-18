@@ -7,6 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.model.Group;
+import com.model.GroupDaoImplement;
+import com.model.Person;
+import com.model.PersonDaoImplement;
+import com.model.User;
+
 /**
  * Servlet implementation class GroupConstructionServlet
  */
@@ -28,6 +34,25 @@ public class GroupConstructionServlet extends HttpServlet {
 		System.out.println(username);
 		String groupname= request.getParameter("newgroupname");
 		System.out.println(groupname);
+		GroupDaoImplement groupmanage = new GroupDaoImplement();
+		PersonDaoImplement personDaoImplement = new PersonDaoImplement();
+		Person person = new User(username,"user");
+		Group group = new Group(groupname, person);
+		if (personDaoImplement.isInGroup(person)){
+			//if a user name is in database, it can not be created. show failed.
+			
+		}
+		else {
+			//then check whether in database then add
+			if (groupmanage.isExistedGroupName(group)){
+				//if group name is existed in database, it can not be added into database;
+				
+			}
+			else{
+				//add into database and return true;
+			}
+		}
+		
 	}
 
 }

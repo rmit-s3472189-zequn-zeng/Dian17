@@ -7,6 +7,10 @@ public class User extends Person {
 		super(id, pwd,type);
 	}
 
+	public User(String id,String type){
+		super(id, type);
+	}
+	
 	public boolean registNewUser(){
 		if(personDaoImplement.addPerson(this)){
 			return true;

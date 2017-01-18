@@ -22,7 +22,7 @@ public class Group {
 		return false;
 	}
 	
-	public List<Person> listAllMember(){
+	public List<String> listAllMember(){
 		return null;
 	}
 	

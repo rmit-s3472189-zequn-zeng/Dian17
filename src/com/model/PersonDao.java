@@ -1,6 +1,6 @@
 package com.model;
 
-import java.util.Set;
+import java.util.List;
 
 public interface PersonDao {
 	public boolean addPerson(Person person) ;  
@@ -11,7 +11,9 @@ public interface PersonDao {
       
     public boolean findPerson(Person person);  
       
-    public Set<Person> findAll(); 
+    public List<String> listAllUserName(); 
     
     public boolean isValidPerson(Person person);
+    
+    public boolean isInGroup(Person  person);
 }
