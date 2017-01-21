@@ -2,14 +2,11 @@ package com.model;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.catalina.filters.CsrfPreventionFilter;
 
 public class PersonDaoImplement implements PersonDao {
 
@@ -17,51 +14,44 @@ public class PersonDaoImplement implements PersonDao {
 	public boolean addPerson(Person person) {
 		Connection connection = null;
 		connection = JDBCUtils.getConnection();
-		String sql1 = "insert into Person(userName,password,type) values('" + person.getUserID() + "',md5('"
-				+ person.getPassword() + "'),'" + "user" + "');";
-		Statement statement = null;
 		try {
-			statement = connection.createStatement();
-			statement.executeUpdate(sql1);
+			CallableStatement callableStatement = connection.prepareCall("{call insertNewUser(?,?)}");
+			callableStatement.setString(1, person.getUserID());
+			callableStatement.setString(2, person.getPassword());
+			callableStatement.executeQuery();
 			System.out.println("Success insert");
 			return true;
 		} catch (SQLException e) {
 			return false;
 		} finally {
-			JDBCUtils.free(null, statement, connection);
+			JDBCUtils.free(null, null, connection);
 		}
 	}
 
 	@Override
 	public boolean deletePerson(Person person) {
-		return false;
-	}
-
-	@Override
-	public boolean updatePerson(Person person) {
-
-		return false;
+	return false;
 	}
 
 	@Override
 	public boolean findPerson(Person person) {
 		Connection connection = null;
 		connection = JDBCUtils.getConnection();
-		PreparedStatement pstmt;
-		String sql = "select * from Person where userName = '" + person.getUserID() + "';";
+		ResultSet rs=null;
 		try {
-			pstmt = (PreparedStatement) connection.prepareStatement(sql);
-			ResultSet rs = pstmt.executeQuery();
-			while (rs.next()) {
-				System.out.println("test:" + rs.getString(2));
-
-				if (rs.getString(2).equals(person.getUserID())) {
-			JDBCUtils.free(rs, pstmt, connection);
+			CallableStatement callableStatement = connection.prepareCall("{call getUserByname(?)}");
+			callableStatement.setString(1, person.getUserID());
+			rs=callableStatement.executeQuery();
+			while(rs.next()){
+				if(rs.getString("userName").equals(person.getUserID())){
+					JDBCUtils.free(rs, null, connection);
 					return true;
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			JDBCUtils.free(rs, null, connection);
 		}
 		return false;
 	}
@@ -89,25 +79,15 @@ public class PersonDaoImplement implements PersonDao {
 	public boolean isValidPerson(Person person) {
 		Connection connection = null;
 		connection = JDBCUtils.getConnection();
-		PreparedStatement pstmt;
-		String sql = "select * from Person where userName = '" + person.getUserID() + "' and md5('"
-				+ person.getPassword() + "')=password;";
 		try {
-//			pstmt = (PreparedStatement) connection.prepareStatement(sql);
-//			ResultSet rs = pstmt.executeQuery();
-//			while (rs.next()) {
-//				System.out.println("Distinguish Success!");
-//				if (rs.getString(2).equals(person.getUserID())) {
-//					JDBCUtils.free(rs, pstmt, connection);
-//					return true;
-//				}
-//			}
-			CallableStatement callableStatement = connection.prepareCall("{call passwordCheck}");
+			CallableStatement callableStatement = connection.prepareCall("{call passwordCheck()}");
 			ResultSet rs=callableStatement.executeQuery();
 			while(rs.next()){
-				System.out.println(rs.getString("isPassword"));
+				if(rs.getString("username").equals(person.getUserID())){
+					JDBCUtils.free(rs, null, connection);
+					return true;
+				}			
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -118,6 +98,12 @@ public class PersonDaoImplement implements PersonDao {
 	@Override
 	public boolean isInGroup(Person username) {
 
+		return false;
+	}
+
+	@Override
+	public boolean updatePerson(Person person, String phone, String birthday, String gender, String school,
+			String degree, String level) {
 		return false;
 	}
 

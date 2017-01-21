@@ -7,7 +7,7 @@ public interface PersonDao {
     
     public boolean deletePerson(Person person);  
       
-    public boolean updatePerson(Person person);  
+    public boolean updatePerson(Person person,String phone,String birthday,String gender,String school,String degree, String level);  
       
     public boolean findPerson(Person person);  
       

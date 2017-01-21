@@ -32,7 +32,11 @@ public class User extends Person {
 		return false;
 	}
 	
-	public boolean updateUserDetail(String phone,String oldPassword, String newPassword, String birthday ){
+	public boolean updateUserDetail(String phone, String birthday,String gender,String school,String degree,String level ){
+		return false;
+	}
+	
+	public boolean changePassword(String oldPassword,String newPassword){
 		return false;
 	}
 	
@@ -50,7 +54,7 @@ public class User extends Person {
 	}
 	
 	public boolean createGroupByName(String groupname){
-		//1.check group name wheather existed in database
+		//1.check group name whether existed in database
 		//2. add group into a person
 		return false;
 	}
